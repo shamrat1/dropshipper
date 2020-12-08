@@ -1,0 +1,79 @@
+@import "normalize.css";
+@import "responsive.css";
+
+/*Common code start*/
+   html, body { height: 100%; margin: 0; background-color: purple;}
+   .wrapper { min-height: 100%; }
+   .navbar .navbar-nav li{ margin-left: 12px; }
+   .navbar-brand{ padding: 0.3125rem 0.5rem; border-radius: 0.25rem; }
+   .dropdown-item:hover, .dropdown-item:focus { color: #000; background-color: cyan; }
+   .navbar-light .navbar-brand, 
+   .navbar-light .ml-auto .nav-link { color: #fff; }
+   .navbar-light .all-item .nav-link { color: #000; }
+
+   .navbar-light .navbar-brand:hover, 
+   .navbar-light .navbar-brand:focus { 
+      color: #000; background-color: cyan; 
+   }
+
+   .navbar-light .navbar-nav .nav-link:hover, 
+   .navbar-light .navbar-nav .nav-link:focus { 
+      color: #000; background-color: cyan; border-radius: 0.25rem;
+   }
+
+   .navbar img{ width: 35px; height: 35px; border-radius: 50%; padding: 0.1rem; margin: 0px; }
+   .border { padding: 5px; margin: 8px 0px; border-radius: 0.25rem; }
+   .card-header { padding: 0.5rem; }
+   .card-body { padding: 0.5rem; }
+   .table td{ vertical-align: middle; }  
+   
+   .border .row{ border-radius: 0.25rem; }
+   .btn-info:not(:disabled):not(.disabled):active, 
+   .btn-info:not(:disabled):not(.disabled).active,
+   .show > .btn-info.dropdown-toggle { background-color: #181a1b; }
+
+/*Common code end*/
+
+fieldset {
+   border: 1px groove skyblue !important;
+   border-radius: 0.50rem;
+   padding: 0 1em 1em 1em !important;
+   margin: 0 0 1.5em 0 !important;
+   -webkit-box-shadow:  0px 0px 0px 0px #000;
+            box-shadow:  0px 0px 2px 0px #000;
+}
+
+legend { 
+    width:inherit;
+    font-size: 1em !important;
+    font-weight: bold !important;
+    text-align: center;
+    border: 1px solid pink; 
+    background-color: whitesmoke;
+    border-radius: 12px;   
+    padding: 0px 10px; 
+    margin-bottom:10px;
+}
+
+.footer {
+  height: auto;   
+  color: #fff;
+  background-color: #2980b9;
+}
+.footer a{
+   color: #fff;
+   font-style: italic;
+}
+.footer ul li{
+   list-style: none;
+   display: inline-block;
+   vertical-align: middle;
+}
+
+.footer ul li img{
+   margin: 10px 10px 10px 0px;
+}
+
+.footer ol, ul, dl {
+    margin-bottom: 0rem;
+}

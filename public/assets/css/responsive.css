@@ -1,0 +1,12 @@
+
+@media only screen and (max-width: 600px) {
+
+    img.img-fluid.t-benner {
+        height: 20rem!important;
+    }
+    div#sidebarr.opened {
+        width: 100%;
+        display: block;
+        transition: .3s all ease-in-out;
+    }
+  }
