@@ -132,3 +132,11 @@ Route::get('/distance/{lat}/{lon}', 'BusinessController@distance')->name('nearby
 //     //Route to get Single-product
 //     Route::get('/single-product/{id}', 'ApiController@single_product')->name('single.product');
 // });
+
+Route::get('/clear/config/123321123',function(){
+    Artisan::call('config:cache');
+});
+
+Route::get('/migrate/now/123321123',function(){
+    Artisan::call('migrate');
+});
