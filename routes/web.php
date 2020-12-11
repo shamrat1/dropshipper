@@ -140,3 +140,7 @@ Route::get('/clear/config/123321123',function(){
 Route::get('/migrate/now/123321123',function(){
     Artisan::call('migrate');
 });
+
+Route::get('/composer/dump',function(){
+    exec('composer dump-autoload');
+});
