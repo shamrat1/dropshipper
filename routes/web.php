@@ -30,6 +30,11 @@ Route::middleware('role:Admin,Editor,Moderator')->prefix('admin')->group(functio
     Route::get('/product', 'ProductController@index')->name('product.index');
     Route::delete('/product/delete/{id}', 'ProductController@destroy')->name('product.delete');
 
+    //product reviews
+    Route::get('/reviews','ReviewController@index')->name('review.index');
+    Route::get('/reviews/{id}','ReviewController@approvalToggle')->name('review.approval.toggle');
+    Route::get('/reviews/{id}/delete','ReviewController@delete')->name('review.delete');
+
     // Users
     Route::get('user-list', 'UserController@userList')->name('user.index');
     Route::get('create-user', 'UserController@createUser')->name('user.create');

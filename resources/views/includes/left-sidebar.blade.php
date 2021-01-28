@@ -21,11 +21,6 @@
                <i data-feather="home"></i><span>Dashboard</span>
             </a>
          </li>
-         @role('Company')
-            <li>
-               <a class="sidebar-header" href="{{ route('staff.index') }}"><i data-feather="users"></i> <span>Staffs</span><i class="fa fa-angle-right pull-right"></i>
-            </a>
-         @endrole
          @role('Business')
          <li>
             <a class="sidebar-header" href="#"><i data-feather="box"></i><span>Products</span><i class="fa fa-angle-right pull-right"></i>
@@ -95,6 +90,12 @@
       <li><a href="{{ route('business.create') }}"><i class="fa fa-circle"></i>Add Business</a></li>
    </ul>
 </li>
+
+<li><a class="sidebar-header" href="{{ route('review.index') }}"><i data-feather="server"></i><span>Reviews</span></a>
+   <!-- <ul class="sidebar-submenu">
+   </ul> -->
+</li>
+
 
 @endrole
 

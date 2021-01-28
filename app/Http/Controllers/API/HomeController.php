@@ -12,11 +12,12 @@ class HomeController extends Controller{
     public function index()
     {
         $categories = Category::with('image')->get();
-        $products = Product::with('images')->orderBy('id','desc')->take(20)->get();
-
+        $products = Product::with('images')->latest()->take(20)->get();
+        $justForYou = Product::with('images')->inRandomOrder()->take(20)->get();
         return response()->json([
             'categories' => $categories,
-            'products' => $products
+            'products' => $products,
+            'featured_products' => $justForYou
         ], 200);
     }
 }

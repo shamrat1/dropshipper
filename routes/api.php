@@ -37,6 +37,9 @@ Route::group(['middleware' => 'auth:api', 'namespace' => 'API'], function () {
     Route::get('/products', 'HomeController@getProducts');
     Route::get('/product/{slug}', 'HomeController@getProduct');
 
+    // product review
+    Route::get('/product/review/store/{id}','ReviewController@store');
+
     // Category Route
     Route::get('/categories', 'HomeController@getCategories');
     Route::get('/category/{id}', 'HomeController@getCategory');
