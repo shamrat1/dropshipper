@@ -13,16 +13,16 @@ class CreateSellerTable extends Migration
      */
     public function up()
     {
-        Schema::create('businesses', function (Blueprint $table) {
-            $table->id();
-            $table->bigInteger('user_id')->unsigned();
-            $table->string('shop_name')->nullable();
-            $table->string('description')->nullable();
-            $table->string('opening_hours')->nullable();
-            $table->boolean('doesShip');
-            $table->string('mobile')->nullable();
-            $table->timestamps();
-        });
+        // Schema::create('businesses', function (Blueprint $table) {
+        //     $table->id();
+        //     $table->bigInteger('user_id')->unsigned();
+        //     $table->string('shop_name')->nullable();
+        //     $table->string('description')->nullable();
+        //     $table->string('opening_hours')->nullable();
+        //     $table->boolean('doesShip');
+        //     $table->string('mobile')->nullable();
+        //     $table->timestamps();
+        // });
     }
 
     /**

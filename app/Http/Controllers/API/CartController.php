@@ -5,17 +5,23 @@ namespace App\Http\Controllers\API;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Cart;
+use App\Http\Traits\CalculateCart;
 
 class CartController extends Controller
 {
+    use CalculateCart;
     public function index(){
-        $cart = Cart::where('user_id',request()->user()->id)->with('product')->get();
-        return response()->json(['items' => $cart]);
+
+        $cart = $this->calculateCart(request()->user());
+        return response()->json([
+            'status' => 'success',
+            'msg' => 'Cart Fetched successfully',
+            'data' => $cart
+            ]);
     }
 
     public function store(Request $request)
     {
-        // dd($request->all());
         $validated = $this->validate($request,[
             'product_id' => 'required|exists:products,id',
             'quantity' => 'required|numeric'
@@ -26,14 +32,20 @@ class CartController extends Controller
             'user_id' => request()->user()->id
         ]);
         
-        return response()->json(['status' => 'Cart Updated']);
+        return response()->json([
+            'status' => 'Cart Updated'
+        ]);
     }
 
     public function increase($id){
         $item = Cart::find($id);
         $item->quantity += 1;
         $item->update();
-        return response()->json(['status' => 'Quantity increased.','quantity' => $item->quantity]);
+        
+        return response()->json([
+            'status' => 'Quantity increased.',
+            'quantity' => $item->quantity
+        ]);
     }
 
     public function decrease($id)
@@ -41,7 +53,10 @@ class CartController extends Controller
         $item = Cart::find($id);
         $item->quantity -= 1;
         $item->update();
-        return response()->json(['status' => 'Quantity increased.','quantity' => $item->quantity]);
+        return response()->json([
+            'status' => 'Quantity increased.',
+            'quantity' => $item->quantity
+        ]);
     }
 
     public function destroy($id)

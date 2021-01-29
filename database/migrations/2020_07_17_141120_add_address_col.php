@@ -14,7 +14,7 @@ class AddAddressCol extends Migration
     public function up()
     {
         Schema::table('businesses', function (Blueprint $table) {
-            $table->string('address')->nullable()->after('name');
+            // $table->string('address')->nullable()->after('name');
         });
     }
 
@@ -26,7 +26,7 @@ class AddAddressCol extends Migration
     public function down()
     {
         Schema::table('businesses', function (Blueprint $table) {
-            //
+            $table->dropColumn('name');
         });
     }
 }

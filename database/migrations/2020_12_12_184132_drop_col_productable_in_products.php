@@ -14,10 +14,10 @@ class DropColProductableInProducts extends Migration
     public function up()
     {
         Schema::table('products', function (Blueprint $table) {
-            $table->dropIndex('productable_type');
-            $table->dropIndex('productable_id');
-            $table->dropColumn('productable_type');
-            $table->dropColumn('productable_id');
+            // $table->dropIndex('productable_type');
+            // $table->dropIndex('productable_id');
+            // $table->dropColumn('productable_type');
+            // $table->dropColumn('productable_id');
             $table->unsignedBigInteger('business_id')->nullable();
 
             $table->foreign('business_id')->references('id')->on('businesses')->onDelete('cascade');

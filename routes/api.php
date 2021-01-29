@@ -62,4 +62,14 @@ Route::group(['middleware' => 'auth:api', 'namespace' => 'API'], function () {
         Route::get('/decrease/{id}','CartController@decrease');
         Route::get('/destroy/{id}','CartController@destroy');
     });
+
+    Route::group(['prefix' => 'checkout'],function(){
+        Route::post('/cashOnDeliery','CheckoutController@cashOnDelivery');
+        Route::post('/payOnline','CheckoutController@payOnline');
+    });
+
+    Route::group(['prefix' => 'orders'],function(){
+        Route::get('/','OrderController@index');
+        Route::get('/{no}','OrderController@show');
+    });
 });

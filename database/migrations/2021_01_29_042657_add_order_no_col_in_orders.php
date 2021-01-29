@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddNameCol extends Migration
+class AddOrderNoColInOrders extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class AddNameCol extends Migration
      */
     public function up()
     {
-        Schema::table('companies', function (Blueprint $table) {
-            $table->string('name')->after('id');
+        Schema::table('orders', function (Blueprint $table) {
+            $table->string('no')->after('id');
         });
     }
 
@@ -25,8 +25,8 @@ class AddNameCol extends Migration
      */
     public function down()
     {
-        Schema::table('companies', function (Blueprint $table) {
-            //
+        Schema::table('orders', function (Blueprint $table) {
+            $table->dropColumn('no');
         });
     }
 }
