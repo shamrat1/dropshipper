@@ -7,7 +7,7 @@
          <div class="row">
             <div class="col-lg-6">
                <div class="page-header-left">
-                  <h3>Reviews List
+                  <h3>Cart List
                   <small>Bigdeal Admin panel</small>
                   </h3>
                </div>
@@ -32,21 +32,19 @@
                   <tr>
                      <th>User</th>
                      <th>Product</th>
-                     <th>Review</th>
-                     <th>Rating</th>
+                     <th>quantity</th>
                      <th>Action</th>
                   </tr>
                </thead>
                <tbody>
-                  @foreach ($reviews as $item)
+                  @foreach ($items as $item)
                       <tr>
                         <td>{{ $item->user->name }}</td>
                         <td>{{ $item->product->title }}</td>
-                        <td>{{ $item->review }}</td>
-                        <td>{{ $item->rating }}</td>
+                        <td>{{ $item->quantity }}</td>
                         <td>
-                           <a href="{{ route('review.approval.toggle',$item->id) }}" class="btn btn-sm @if($item->isApproved)btn-warning @else btn-success @endif" onclick="return confirm('Are you Sure about this?')"><i class="fa @if($item->isApproved)fa-times @else fa-check @endif"></i></a>
-                           <a href="{{ route('review.delete',$item->id) }}" class="btn btn-sm btn-danger" onclick="return confirm('Are you Sure about this?')"><i class="fa fa-edit"></i></a>
+                           <!-- <a href="{{ route('review.approval.toggle',$item->id) }}" class="btn btn-sm @if($item->isApproved)btn-warning @else btn-success @endif" onclick="return confirm('Are you Sure about this?')"><i class="fa @if($item->isApproved)fa-times @else fa-check @endif"></i></a>
+                           <a href="{{ route('review.delete',$item->id) }}" class="btn btn-sm btn-danger" onclick="return confirm('Are you Sure about this?')"><i class="fa fa-edit"></i></a> -->
                         </td>
                      </tr>
                   @endforeach
@@ -58,7 +56,7 @@
          </div>  
          <div class="row">
             <div class="align-center">
-               {{ $reviews->links() }}
+               {{ $items->links() }}
             </div>
          </div>
    </div>

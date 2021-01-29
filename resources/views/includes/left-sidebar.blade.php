@@ -91,6 +91,8 @@
    </ul>
 </li>
 
+<li><a class="sidebar-header" href="{{ route('order.index') }}"><i data-feather="server"></i><span>Orders</span></a>
+<li><a class="sidebar-header" href="{{ route('cart.index') }}"><i data-feather="server"></i><span>Cart Items</span></a>
 <li><a class="sidebar-header" href="{{ route('review.index') }}"><i data-feather="server"></i><span>Reviews</span></a>
    <!-- <ul class="sidebar-submenu">
    </ul> -->

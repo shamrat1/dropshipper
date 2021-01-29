@@ -26,6 +26,12 @@ Route::middleware('role:Admin,Editor,Moderator')->prefix('admin')->group(functio
     Route::get('/business/create', 'BusinessController@create')->name('business.create');
     Route::delete('/business/destroy/{id}', 'BusinessController@destroy')->name('business.delete');
 
+    // Cart Items
+    Route::get('/cart','CartController@index')->name('cart.index');
+
+    // Orders
+    Route::get('/orders','OrdersController@index')->name('order.index');
+
     //products
     Route::get('/product', 'ProductController@index')->name('product.index');
     Route::delete('/product/delete/{id}', 'ProductController@destroy')->name('product.delete');

@@ -46,7 +46,7 @@
                         <td>{{ $item->price }}</td>
                         <td>{{ $item->product_code }}</td>
                         <td>{{ Carbon\Carbon::parse($item->created_at)->format('d M Y h:i A') }}</td>
-                        <td>{{ $item->productable->name }}</td>
+                        <td>{{ $item->business->name }}</td>
                         <td>{{ $item->total_product }}</td>
                         <td>
                            <form action="{{ route('product.delete',$item->id) }}" method="POST">

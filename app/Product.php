@@ -18,7 +18,7 @@ class Product extends Model
     ];
     public function business()
     {
-        return $this->belongsTo(Bussiness::class);
+        return $this->belongsTo(Bussiness::class,'productable_id');
     }
     public function productable()
     {
